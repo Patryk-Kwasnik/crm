@@ -9,7 +9,8 @@
     <link rel="icon" href=" {{asset('admin/images/favicon.ico')}}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{env('APP_NAME')}}</title>
-{{--    @vite(['resources/js/app.js'])--}}
+    @vite(['resources/js/app.js'])
+    @vite(['resources/sass/admin.scss'])
 
     <!-- Vendors Style-->
     <link rel="stylesheet" href=" {{asset('admin/css/vendors_css.css')}}">

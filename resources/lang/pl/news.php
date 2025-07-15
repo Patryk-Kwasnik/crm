@@ -7,8 +7,11 @@ return [
     'category' => 'Kategorie',
     'permission' => 'Uprawnienia',
     'news' => 'Aktualności',
-    'news_name' => 'Tytuł',
-    'news_text' => 'Treść',
+    'name' => 'Tytuł',
+    'slug' => 'Slug',
+    'status' => 'Status',
+    'text' => 'Treść',
+    'no_parent' => 'Brak kategori',
     'category_name' => 'Nazwa kategori',
     'category_parent' => 'Nazwa kategori nadrzędnej',
 

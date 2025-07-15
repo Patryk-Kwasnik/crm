@@ -6,10 +6,9 @@ Route::get('/changeLanguage', [LanguageController::class, 'change'])->name('sess
 
 Route::view('/about', 'about')->name('about');
 
-Route::view('/order-realisation', 'order-realisation')->name('order-realisation');
-
 require __DIR__ . '/user-auth.php';
 require __DIR__ . '/admin-auth.php';
+require __DIR__ . '/api.php';
 
 Auth::routes();
 

@@ -19,10 +19,10 @@
                                ['name' => 'id', 'label' =>  __('system.id')],
                                ['name' => 'name', 'label' =>  __('categories.name')],
                                ['name' => 'slug', 'label' =>  __('categories.slug')],
-                               ['name' => 'status', 'label' =>  __('categories.status')],
+                               ['name' => 'status_label', 'label' =>  __('categories.status')],
                                ['name' => 'options', 'label' =>  __('system.options')]
                            ]" :data="$data" optionsView="admin.categories.options" />
-                    
+
                         </div>
                     </div>
                 </div>

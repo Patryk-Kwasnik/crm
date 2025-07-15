@@ -18,14 +18,14 @@
                 <div class="col-xs-12 col-sm-12 col-md-5">
                     <div class="form-group">
                         <strong>{{ __('categories.name') }}:</strong>
-                        <input type="text" name="name" placeholder="Category Name" class="form-control" value="{{ old('name') }}">
+                        <input type="text" name="name" placeholder="{{ __('categories.name') }}" class="form-control" value="{{ old('name') }}">
                         <x-input-error field="name" />
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-5">
                     <div class="form-group">
                         <strong>{{ __('categories.slug') }}:</strong>
-                        <input type="text" name="slug" placeholder="slug" class="form-control"  value="{{ old('slug') }}" >
+                        <input type="text" name="slug" placeholder="{{ __('categories.slug') }}" class="form-control"  value="{{ old('slug') }}" >
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-5">

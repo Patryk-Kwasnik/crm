@@ -7,7 +7,7 @@
                 <a href="index.html">
                     <!-- logo for regular state and mobile devices -->
                     <div class="d-flex align-items-center justify-content-center">
-                        <img src="../images/logo-dark.png" alt="">
+{{--                        <img src="{{ asset('admin/images/crm.png') }}" alt="" height="60px">--}}
                         <h3><b>{{env('APP_NAME')}}</b></h3>
                     </div>
                 </a>
@@ -26,47 +26,47 @@
 
             <li class="header nav-small-cap">System</li>
             {{--Nowości--}}
-            {{-- <li class="treeview">
-                <a href="{{ route('newsCategory.index') }}">
+             <li class="treeview">
+                <a href="{{ route('admin.categories.index') }}">
                     <i data-feather="news"></i>
                     <span>{{ __('system.nav_news') }}</span>
                 </a>
                 <ul class="treeview-menu">
                     <li>
-                        <a href="{{ route('newsCategory.index') }}">
+                        <a href="{{ route('admin.categories.index') }}">
                             <i class="fa fa-cogs" ></i>
                             <span>{{ __('system.nav_news_categories') }}</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('news.index') }}">
+                        <a href="{{ route('admin.news.index') }}">
                             <i class="fa fa-cogs"></i>
                             <span>{{ __('system.nav_news') }}</span>
                         </a>
                     </li>
                 </ul>
-            </li> --}}
+            </li>
             {{--zadania--}}
-            {{-- <li class="treeview">
-                <a href="{{ route('tasks.index') }}">
+             <li class="treeview">
+                <a href="{{ route('admin.tasks.index') }}">
                     <i data-feather="tasks"></i>
                     <span>{{ __('system.nav_tasks') }}</span>
                 </a>
                 <ul class="treeview-menu">
+{{--                    <li>--}}
+{{--                        <a href="{{ route('calendar.index') }}">--}}
+{{--                            <i class="fa fa-cogs" ></i>--}}
+{{--                            <span>{{ __('system.nav_calendar') }}</span>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
                     <li>
-                        <a href="{{ route('calendar.index') }}">
-                            <i class="fa fa-cogs" ></i>
-                            <span>{{ __('system.nav_calendar') }}</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('tasks.index') }}">
+                        <a href="{{ route('admin.tasks.index') }}">
                             <i class="fa fa-cogs"></i>
                             <span>{{ __('system.nav_tasks') }}</span>
                         </a>
                     </li>
                 </ul>
-            </li> --}}
+            </li>
             {{--Użytkownicy--}}
             <li class="treeview">
                 <a href="{{ route('admin.users.index') }}">
@@ -88,26 +88,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="treeview">
-                <a href="#">
-                    <i data-feather="products"></i>
-                    <span>{{ __('products.all_products') }}</span>
-                </a>
-                <ul class="treeview-menu">
-                    <li>
-                        <a href="{{ route('admin.products.index') }}">
-                            <i class="fa fa-cogs"></i>
-                            <span>{{ __('system.nav_products') }}</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('admin.categories.index') }}">
-                            <i class="fa fa-cogs"></i>
-                            <span>{{ __('system.nav_categories') }}</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
+
             {{--wyloguj--}}
             <li>
                 <a href="{{ route('admin.logout') }}">
