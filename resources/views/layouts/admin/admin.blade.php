@@ -10,6 +10,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{env('APP_NAME')}}</title>
     @vite(['resources/js/app.js'])
+    @vite(['resources/sass/app.scss'])
     @vite(['resources/sass/admin.scss'])
 
     <!-- Vendors Style-->

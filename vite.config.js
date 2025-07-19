@@ -16,7 +16,8 @@ export default defineConfig({
                 'resources/sass/app.scss',
                 'resources/js/app.js',
                 'resources/js/calendar.js',
-                'resources/sass/admin.scss'
+                'resources/sass/admin.scss',
+                'resources/js/image-uploader.js'
             ],
             refresh: true,
         }),

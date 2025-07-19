@@ -17,5 +17,12 @@
         </form>
     </div>
 
+    @include('components.image-uploader', [
+        'modelId' => $task->id,
+        'modelType' => 'task',
+        'uploadUrl' => route('images.store'),
+        'fetchUrl' => route('images.index'),
+        ])
+
     @include('admin.tasks.tasks_comments')
 @endsection
