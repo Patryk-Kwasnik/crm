@@ -10,6 +10,8 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\NewsCategoryController;
 use App\Http\Controllers\Admin\TaskController;
 use App\Http\Controllers\Admin\TaskCommentController;
+use App\Http\Controllers\Admin\DocumentController;
+use App\Http\Controllers\Admin\DocumentCategoryController;
 
 Route::middleware('guest:admin')->prefix('admin')->name('admin.')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
@@ -34,4 +36,12 @@ Route::middleware('auth:admin')->prefix('admin')->name('admin.')->group(function
     Route::resource('tasks', TaskController::class);
     Route::post('tasks/{task}/comments', [TaskCommentController::class, 'store'])->name('tasks.comments.store');
 
+    Route::resource('documents_categories', DocumentCategoryController::class);
+    Route::prefix('documents')->name('documents.')->controller(DocumentController::class)->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/', 'store')->name('store');
+        Route::delete('{id}', 'destroy')->name('destroy');
+        Route::get('{id}/download', 'download')->name('download');
+    });
 });

@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\TaskRequest;
-use App\Repositories\TaskCommentRepository;
-use App\Repositories\TaskRepository;
-use App\Repositories\UserRepository;
+use App\Repositories\TaskCommentRepositoryInterface;
+use App\Repositories\TaskRepositoryInterface;
+use App\Repositories\UserRepositoryInterface;
 use App\Enums\TaskStatusEnum;
 use App\Enums\TaskPriorityEnum;
 use Illuminate\Http\RedirectResponse;
@@ -15,9 +15,9 @@ use Illuminate\View\View;
 class TaskController extends Controller
 {
     function __construct(
-        protected TaskRepository $taskRepository,
-        protected UserRepository $userRepository,
-        protected TaskCommentRepository $taskCommentRepository)
+        protected TaskRepositoryInterface $taskRepository,
+        protected UserRepositoryInterface $userRepository,
+        protected TaskCommentRepositoryInterface $taskCommentRepository)
     {
         $this->middleware('permission:tasks-list|tasks-create|tasks-edit|tasks-delete', ['only' => ['index','show']]);
         $this->middleware('permission:tasks-create', ['only' => ['create','store']]);

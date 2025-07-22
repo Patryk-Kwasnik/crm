@@ -5,18 +5,18 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\CategoryRequest;
 use Illuminate\Http\Request;
-use App\Repositories\NewsCategoryRepositoryInterface;
+use App\Repositories\DocumentCategoryRepositoryInterface;
 
-class NewsCategoryController extends Controller
+class DocumentCategoryController extends Controller
 {
     protected $categoryRepository;
 
-    function __construct(NewsCategoryRepositoryInterface $categoryRepository)
+    function __construct(DocumentCategoryRepositoryInterface $categoryRepository)
     {
-        $this->middleware('permission:news-categories-list|news-categories-create|news-categories-edit|news-categories-delete', ['only' => ['index','show']]);
-        $this->middleware('permission:news-categories-create', ['only' => ['create','store']]);
-        $this->middleware('permission:news-categories-edit', ['only' => ['edit','update']]);
-        $this->middleware('permission:news-categories-delete', ['only' => ['destroy']]);
+        $this->middleware('permission:documents-list|documents-create|documents-edit|documents-delete', ['only' => ['index','show']]);
+        $this->middleware('permission:documents-create', ['only' => ['create','store']]);
+        $this->middleware('permission:documents-edit', ['only' => ['edit','update']]);
+        $this->middleware('permission:documents-delete', ['only' => ['destroy']]);
         $this->categoryRepository = $categoryRepository;
     }
     /**
@@ -28,7 +28,7 @@ class NewsCategoryController extends Controller
     {
         $data = $this->categoryRepository->getAll();
 
-        return view('admin.categories.index', compact('data'));
+        return view('admin.documents_categories.index', compact('data'));
     }
     /**
      * Show the form for creating a new resource.
@@ -38,7 +38,7 @@ class NewsCategoryController extends Controller
     public function create()
     {
         $categories = $this->categoryRepository->getParentCategories();
-        return view('admin.categories.create', compact('categories'));
+        return view('admin.documents_categories.create', compact('categories'));
     }
     /**
      * Store a newly created resource in storage.
@@ -49,7 +49,7 @@ class NewsCategoryController extends Controller
     public function store(CategoryRequest $request)
     {
         $this->categoryRepository->create($request->validated());
-        return redirect()->route('admin.categories.index')->with('success',  __('system.created_success'));
+        return redirect()->route('admin.documents_categories.index')->with('success',  __('system.created_success'));
     }
     /**
      * Display the specified resource.
@@ -71,7 +71,7 @@ class NewsCategoryController extends Controller
     {
         $category = $this->categoryRepository->findById($id);
         $categories = $this->categoryRepository->getParentCategories($id);
-        return view('admin.categories.edit', compact('category', 'categories'));
+        return view('admin.documents_categories.edit', compact('category', 'categories'));
     }
     /**
      * Update the specified resource in storage.
@@ -83,7 +83,7 @@ class NewsCategoryController extends Controller
     public function update(CategoryRequest $request, $id)
     {
         $this->categoryRepository->update($id, $request->validated());
-        return redirect()->route('admin.categories.index')->with('success', __('system.updated_success'));
+        return redirect()->route('admin.documents_categories.index')->with('success', __('system.updated_success'));
     }
     /**
      * Remove the specified resource from storage.
@@ -94,6 +94,6 @@ class NewsCategoryController extends Controller
     public function destroy($id)
     {
         $this->categoryRepository->delete($id);
-        return redirect()->route('admin.categories.index')->with('success', __('system.deleted_success'));
+        return redirect()->route('admin.documents_categories.index')->with('success', __('system.deleted_success'));
     }
 }

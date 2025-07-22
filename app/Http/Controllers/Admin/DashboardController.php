@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-use App\Repositories\NewsRepository;
+use App\Repositories\NewsRepositoryInterface;
 
 class DashboardController
 {
-    function __construct(protected NewsRepository $newsRepository)
+    function __construct(protected NewsRepositoryInterface $newsRepository)
     {
 
     }

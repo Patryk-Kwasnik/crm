@@ -67,6 +67,26 @@
                     </li>
                 </ul>
             </li>
+            <li class="treeview">
+                <a href="{{ route('admin.documents.index') }}">
+                    <i data-feather="documents"></i>
+                    <span>{{ __('system.nav_documents') }}</span>
+                </a>
+                <ul class="treeview-menu">
+                    <li>
+                        <a href="{{ route('admin.documents_categories.index') }}">
+                            <i class="fa fa-cogs"></i>
+                            <span>{{ __('system.nav_documents_categories') }}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.documents.index') }}">
+                            <i class="fa fa-cogs"></i>
+                            <span>{{ __('system.nav_documents') }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
             {{--Użytkownicy--}}
             <li class="treeview">
                 <a href="{{ route('admin.users.index') }}">

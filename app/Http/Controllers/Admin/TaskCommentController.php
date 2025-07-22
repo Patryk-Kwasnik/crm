@@ -5,16 +5,14 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\TaskCommentRequest;
 use App\Models\Task;
-use App\Repositories\TaskCommentRepository;
+use App\Repositories\TaskCommentRepositoryInterface;
 use Illuminate\Support\Facades\Auth;
 
 class TaskCommentController extends Controller
 {
-    protected TaskCommentRepository $taskCommentRepository;
 
-    public function __construct(TaskCommentRepository $taskCommentRepository)
+    public function __construct(protected TaskCommentRepositoryInterface $taskCommentRepository)
     {
-        $this->taskCommentRepository = $taskCommentRepository;
     }
 
     public function store(TaskCommentRequest $request, Task $task)

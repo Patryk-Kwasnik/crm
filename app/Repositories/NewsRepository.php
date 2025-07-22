@@ -5,6 +5,7 @@ namespace App\Repositories;
 use App\Models\News;
 use App\Enums\ActiveStatusEnum;
 use Illuminate\Database\Eloquent\Collection;
+use App\Repositories\NewsRepositoryInterface;
 
 class NewsRepository implements NewsRepositoryInterface
 {

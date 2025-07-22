@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
-use App\Repositories\NewsCategoryRepository;
-use App\Repositories\NewsRepository;
+use App\Repositories\NewsCategoryRepositoryInterface;
+use App\Repositories\NewsRepositoryInterface;
 use App\Http\Requests\Admin\NewsRequest;
 use Illuminate\Http\Request;
 class NewsController extends Controller
 {
-    function __construct(private NewsRepository $newsRepository, private NewsCategoryRepository $newsCategoryRepository)
+    function __construct(private NewsRepositoryInterface $newsRepository, private NewsCategoryRepositoryInterface $newsCategoryRepository)
     {
         $this->middleware('permission:news-list|news-create|news-edit|news-delete', ['only' => ['index', 'show']]);
         $this->middleware('permission:news-create', ['only' => ['create', 'store']]);
