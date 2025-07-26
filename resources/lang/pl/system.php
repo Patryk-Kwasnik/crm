@@ -21,6 +21,7 @@ return [
 
     'nav_roles_settings' => 'Ustawienia praw',
     'nav_users_settings' => 'Zarządzaj użytkownikami',
+    'nav_customers' => 'Baza klientów',
     'nav_news' => 'Aktualności',
     'nav_documents' => 'Dokumenty',
     'nav_documents_categories' => 'Kategorie dokumentów',

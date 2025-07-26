@@ -14,3 +14,12 @@
     object-fit: cover;
     display: block;
 }
+
+body{
+    font-size:1rem;
+}
+
+.btn.delete:hover{
+    background-color: #e11212 !important;
+    border-color:#e11212 !important;
+}

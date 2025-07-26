@@ -25,6 +25,21 @@
             </li>
 
             <li class="header nav-small-cap">System</li>
+            {{--Klienci--}}
+            <li class="treeview">
+                <a href="{{ route('admin.customers.index') }}">
+                    <i data-feather="customers"></i>
+                    <span>{{ __('system.nav_customers') }}</span>
+                </a>
+                <ul class="treeview-menu">
+                    <li>
+                        <a href="{{ route('admin.customers.index') }}">
+                            <i class="fa fa-cogs"></i>
+                            <span>{{ __('system.nav_customers') }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
             {{--Nowości--}}
              <li class="treeview">
                 <a href="{{ route('admin.categories.index') }}">

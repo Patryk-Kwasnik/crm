@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Repositories\CountryRepository;
+use App\Repositories\CountryRepositoryInterface;
 use App\Repositories\DocumentCategoryRepository;
 use App\Repositories\DocumentCategoryRepositoryInterface;
 use App\Repositories\DocumentRepository;
@@ -16,6 +18,10 @@ use App\Repositories\TaskRepository;
 use App\Repositories\TaskRepositoryInterface;
 use App\Repositories\UserRepository;
 use App\Repositories\UserRepositoryInterface;
+use App\Repositories\CustomerRepositoryInterface;
+use App\Repositories\CustomerRepository;
+use App\Services\CountryService;
+use App\Services\CountryServiceInterface;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Http\Request;
@@ -65,5 +71,9 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(ImageRepositoryInterface::class, ImageRepository::class);
         $this->app->bind(DocumentRepositoryInterface::class, DocumentRepository::class);
         $this->app->bind(DocumentCategoryRepositoryInterface::class, DocumentCategoryRepository::class);
+        $this->app->bind(CustomerRepositoryInterface::class, CustomerRepository::class);
+        $this->app->bind(CountryRepositoryInterface::class, CountryRepository::class);
+        $this->app->bind(CountryServiceInterface::class, CountryService::class);
+
     }
 }

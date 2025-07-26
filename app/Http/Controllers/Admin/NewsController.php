@@ -31,7 +31,7 @@ class NewsController extends Controller
     public function store(NewsRequest $request)
     {
         $this->newsRepository->create($request->validated());
-        return redirect()->route('admin.news.index')->with('success', 'News created successfully.');
+        return redirect()->route('admin.news.index')->with('success', __('system.created_success'));
     }
 
     public function edit($id)
