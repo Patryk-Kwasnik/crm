@@ -2,13 +2,17 @@
 
 namespace App\Repositories;
 
+use App\Enums\ActiveStatusEnum;
 use App\Models\Customer;
 use Illuminate\Support\Collection;
 class CustomerRepository implements CustomerRepositoryInterface
 {
     public function all(): Collection
     {
-        return Customer::all();
+        return Customer::all()->map(function ($customer) {
+            $customer->status_label = ActiveStatusEnum::getList($customer->status);
+            return $customer;
+        });
     }
 
     public function find(int $id): ?Customer

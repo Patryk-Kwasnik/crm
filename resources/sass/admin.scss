@@ -250,10 +250,10 @@ body{
         background:#57AAB4;
         color: #fff;
         border-radius: 30px;
-        box-shadow: 0 0 5px #57AAB4,
+        box-shadow: 0 0 10px #57AAB4,
         0 0 25px #57AAB4,
         0 0 50px #57AAB4,
-        0 0 100px #03e9f4;
+        0 0 10px #03e9f4;
     }
 
 
@@ -331,3 +331,40 @@ body{
     background-color: #e11212 !important;
     border-color:#e11212 !important;
 }
+
+.table-responsive{
+
+    .btn-secondary {
+        position: relative;
+        display: inline-block;
+        background: linear-gradient(var(--gradient-angle), rgb(255, 255, 255), rgb(0, 0, 0));
+        animation: rotation-btn 3s linear infinite;
+        color: white;
+        padding: 0.5rem 1rem;
+        overflow: hidden;
+        z-index: 0;
+        border: none;
+
+    }
+    .btn-secondary:hover{
+
+    }
+    @keyframes rotation-btn
+    {
+        0%
+        {
+            --gradient-angle: 0deg;
+        }
+        100%
+        {
+            --gradient-angle: 360deg;
+        }
+    }
+    @property --gradient-angle
+    {
+        syntax: "<angle>";
+        initial-value: 0deg;
+        inherits: false;
+    }
+}
+

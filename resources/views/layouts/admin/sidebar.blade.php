@@ -5,7 +5,6 @@
         <div class="user-profile">
             <div class="ulogo">
                 <a href="index.html">
-                    <!-- logo for regular state and mobile devices -->
                     <div class="d-flex align-items-center justify-content-center">
 {{--                        <img src="{{ asset('admin/images/crm.png') }}" alt="" height="60px">--}}
                         <h3><b>{{env('APP_NAME')}}</b></h3>
@@ -57,6 +56,21 @@
                         <a href="{{ route('admin.news.index') }}">
                             <i class="fa fa-cogs"></i>
                             <span>{{ __('system.nav_news') }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            {{--oferty--}}
+            <li class="treeview">
+                <a href="{{ route('admin.offers.index') }}">
+                    <i data-feather="offers"></i>
+                    <span>{{ __('system.nav_offers') }}</span>
+                </a>
+                <ul class="treeview-menu">
+                    <li>
+                        <a href="{{ route('admin.offers.index') }}">
+                            <i class="fa fa-cogs"></i>
+                            <span>{{ __('system.nav_offers') }}</span>
                         </a>
                     </li>
                 </ul>

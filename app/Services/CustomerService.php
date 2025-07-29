@@ -4,12 +4,26 @@ namespace App\Services;
 
 use App\Repositories\CustomerRepositoryInterface;
 use Illuminate\Support\Collection;
-class CustomerService
+class CustomerService implements CustomerServiceInterface
 {
     public function __construct(
         private readonly CustomerRepositoryInterface $repository
     ) {}
 
+    public function getSelectList(): array
+    {
+        return $this->repository->all()
+            ->mapWithKeys(function ($customer) {
+                $label = $customer->company_name;
+
+                if ($customer->name || $customer->surname) {
+                    $label .= ' (' . trim("{$customer->name} {$customer->surname}") . ')';
+                }
+
+                return [$customer->id => $label];
+            })
+            ->toArray();
+    }
     public function getCustomerTickets(int $customerId): Collection
     {
         $customer = $this->repository->findWithTickets($customerId);

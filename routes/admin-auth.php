@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\TaskCommentController;
 use App\Http\Controllers\Admin\DocumentController;
 use App\Http\Controllers\Admin\DocumentCategoryController;
 use App\Http\Controllers\Admin\CustomerController;
+use App\Http\Controllers\Admin\OfferController;
 
 Route::middleware('guest:admin')->prefix('admin')->name('admin.')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
@@ -36,6 +37,8 @@ Route::middleware('auth:admin')->prefix('admin')->name('admin.')->group(function
     Route::resource('news', NewsController::class);
     Route::resource('tasks', TaskController::class);
     Route::resource('customers', CustomerController::class);
+    Route::resource('offers', OfferController::class);
+
     Route::post('tasks/{task}/comments', [TaskCommentController::class, 'store'])->name('tasks.comments.store');
 
     Route::resource('documents_categories', DocumentCategoryController::class);

@@ -12,6 +12,8 @@ use App\Repositories\ImageRepository;
 use App\Repositories\ImageRepositoryInterface;
 use App\Repositories\NewsCategoryRepository;
 use App\Repositories\NewsCategoryRepositoryInterface;
+use App\Repositories\OfferRepository;
+use App\Repositories\OfferRepositoryInterface;
 use App\Repositories\TaskCommentRepository;
 use App\Repositories\TaskCommentRepositoryInterface;
 use App\Repositories\TaskRepository;
@@ -22,6 +24,10 @@ use App\Repositories\CustomerRepositoryInterface;
 use App\Repositories\CustomerRepository;
 use App\Services\CountryService;
 use App\Services\CountryServiceInterface;
+use App\Services\CustomerService;
+use App\Services\CustomerServiceInterface;
+use App\Services\OfferService;
+use App\Services\OfferServiceInterface;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Http\Request;
@@ -72,8 +78,10 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(DocumentRepositoryInterface::class, DocumentRepository::class);
         $this->app->bind(DocumentCategoryRepositoryInterface::class, DocumentCategoryRepository::class);
         $this->app->bind(CustomerRepositoryInterface::class, CustomerRepository::class);
+        $this->app->bind(CustomerServiceInterface::class, CustomerService::class);
         $this->app->bind(CountryRepositoryInterface::class, CountryRepository::class);
         $this->app->bind(CountryServiceInterface::class, CountryService::class);
-
+        $this->app->bind(OfferRepositoryInterface::class, OfferRepository::class);
+        $this->app->bind(OfferServiceInterface::class, OfferService::class);
     }
 }

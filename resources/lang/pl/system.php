@@ -23,6 +23,7 @@ return [
     'nav_users_settings' => 'Zarządzaj użytkownikami',
     'nav_customers' => 'Baza klientów',
     'nav_news' => 'Aktualności',
+    'nav_offers' => 'Oferty',
     'nav_documents' => 'Dokumenty',
     'nav_documents_categories' => 'Kategorie dokumentów',
     'window_news' => 'Najnowsze aktualności',
