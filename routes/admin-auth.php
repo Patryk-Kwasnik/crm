@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Admin\Auth\RegisteredUserController;
 use App\Http\Controllers\Admin\NewsController;
+use App\Http\Controllers\Admin\OfferTemplateController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\RoleController;
@@ -38,6 +39,7 @@ Route::middleware('auth:admin')->prefix('admin')->name('admin.')->group(function
     Route::resource('tasks', TaskController::class);
     Route::resource('customers', CustomerController::class);
     Route::resource('offers', OfferController::class);
+    Route::resource('offers_templates', OfferTemplateController::class);
 
     Route::post('tasks/{task}/comments', [TaskCommentController::class, 'store'])->name('tasks.comments.store');
 

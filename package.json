@@ -24,6 +24,7 @@
         "@fullcalendar/core": "^6.1.18",
         "@fullcalendar/daygrid": "^6.1.18",
         "@fullcalendar/interaction": "^6.1.18",
+        "@fullcalendar/list": "^6.1.18",
         "@fullcalendar/timegrid": "^6.1.18",
         "bootstrap-colorpicker": "^3.4.0",
         "bootstrap-datepicker": "^1.10.0",
@@ -36,6 +37,7 @@
         "morris.js": "^0.5.0",
         "owl.carousel": "^2.3.4",
         "sweetalert": "^2.1.2",
+        "tinymce": "^8.0.1",
         "x-editable": "^1.5.1"
     }
 }

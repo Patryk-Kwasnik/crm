@@ -28,6 +28,8 @@ use App\Services\CustomerService;
 use App\Services\CustomerServiceInterface;
 use App\Services\OfferService;
 use App\Services\OfferServiceInterface;
+use App\Services\OfferTemplateService;
+use App\Services\OfferTemplateServiceInterface;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Http\Request;
@@ -36,7 +38,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
 use App\Repositories\NewsRepositoryInterface;
 use App\Repositories\NewsRepository;
-
+use App\Repositories\OfferTemplateRepository;
+use App\Repositories\OfferTemplateRepositoryInterface;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -83,5 +86,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(CountryServiceInterface::class, CountryService::class);
         $this->app->bind(OfferRepositoryInterface::class, OfferRepository::class);
         $this->app->bind(OfferServiceInterface::class, OfferService::class);
+        $this->app->bind(OfferTemplateRepositoryInterface::class, OfferTemplateRepository::class);
+        $this->app->bind(OfferTemplateServiceInterface::class, OfferTemplateService::class);
     }
 }

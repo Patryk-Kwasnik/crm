@@ -33,7 +33,6 @@
                 <div class="hero">
                     <div class="main-box">
                         <div class="form-box">
-                            <span class="brand-name">CRM Admin</span>
 
                             <div class="button-box">
                                 <div id="btn"></div>
@@ -50,8 +49,8 @@
 
                                 <input type="submit" class="submit-btn" value="Log in">
                             </form>
-                            <p><a class="text-blue" href="{{ route('password.request') }}">Forgot Your
-                                Password?</a></p>
+{{--                            <p><a class="text-blue" href="{{ route('password.request') }}">Forgot Your--}}
+{{--                                Password?</a></p>--}}
                             <form id="register" class="input-group">
                                 <input type="text" class="input-field" placeholder="User" required>
                                 <input type="email" class="input-field" placeholder="Email" required>

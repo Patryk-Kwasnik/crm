@@ -17,8 +17,9 @@
     @vite(['resources/js/app.js'])
     @vite(['resources/sass/app.scss'])
     @vite(['resources/sass/admin.scss'])
-
-	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{{ asset('js/tinymce/tinymce.min.js') }}"></script>
+    @vite(['resources/js/admin.js'])
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="hold-transition dark-skin sidebar-mini theme-primary fixed">

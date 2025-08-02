@@ -73,6 +73,12 @@
                             <span>{{ __('system.nav_offers') }}</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="{{ route('admin.offers_templates.index') }}">
+                            <i class="fa fa-cogs"></i>
+                            <span>{{ __('system.nav_offers_templates') }}</span>
+                        </a>
+                    </li>
                 </ul>
             </li>
             {{--zadania--}}
